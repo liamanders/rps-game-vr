@@ -14,7 +14,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false)
   const [playerName, setPlayerName] = useState('Player')
 
-
+  // Test
   const choices = [rock, paper, scissors]
 
   return (
