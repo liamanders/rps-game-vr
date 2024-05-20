@@ -22,6 +22,18 @@ function App() {
     calculateResult(choice, computerChoice);
   };
   // call for calculateResult function //
+  const getImage = (choice) => {
+    switch (choice) {
+      case rock:
+        return rock;
+      case paper:
+        return paper;
+      case scissors:
+        return scissors;
+      default:
+        return rock;
+    }
+  };
 
   return (
     <>
