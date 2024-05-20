@@ -18,8 +18,10 @@ function App() {
   const handlePlayerChoice = (choice) => {
     setPlayerChoice(choice);
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    
+    setComputerChoice(computerChoice);
+    calculateResult(choice, computerChoice);
   };
+  // call for calculateResult function //
 
   return (
     <>
