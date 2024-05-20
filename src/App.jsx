@@ -52,6 +52,13 @@ function App() {
       setComputerPoints(computerPoints + 1);
     } 
     // Call for gameover function.
+    checkGameOver();
+  };
+
+  const checkGameOver = () => {
+    if (playerPoints === 5 || computerPoints === 5) {
+      setGameOver(true);
+    }
   };
 
 
