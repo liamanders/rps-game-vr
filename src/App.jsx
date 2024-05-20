@@ -17,6 +17,7 @@ function App() {
   const choices = [rock, paper, scissors]
   const handlePlayerChoice = (choice) => {
     setPlayerChoice(choice);
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     
   };
 
