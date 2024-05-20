@@ -15,7 +15,6 @@ function App() {
 
 
   const choices = [rock, paper, scissors]
-  const isActive = true;
 
   useEffect(() => {
     const askPlayerName = () => {
