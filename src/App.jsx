@@ -8,14 +8,15 @@ import './App.css'
 function App() {
   const [playerChoice, setPlayerChoice] = useState(rock)
   const [computerChoice, setComputerChoice] = useState(rock)
-  const [playerPoints, setPlayerPoints] = useState (0)
-  const [computerPoints, setComputerPoints] = useState (0)
-  const [result, setResult] = useState ('Let\'s see who wins!')
+  const [playerPoints, setPlayerPoints] = useState(0)
+  const [computerPoints, setComputerPoints] = useState(0)
+  const [result, setResult] = useState('Let\'s see who wins!')
   const [gameOver, setGameOver] = useState(false)
   const [playerName, setPlayerName] = useState('Player')
 
 
   const choices = [rock, paper, scissors]
+
 
   useEffect(() => {
     const askPlayerName = () => {
@@ -30,22 +31,40 @@ function App() {
   },[]);
 
 
-  return (
-    <>
-      <section className="container">
+  const calculateResult = (playerChoice, computerChoice) => {
+    if (playerChoice === computerChoice) {
+      setPlayerResult("It's a tie!");
+    } else if (
+      (playerChoice === "rock" && computerChoice === "scissors") ||
+      (playerChoice === "paper" && computerChoice === "rock") ||
+      (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+      setPlayerResult("You win!");
+      setPlayerPoints(playerPoints + 1);
+    } else {
+      setPlayerResult("Computer wins!");
+      setComputerPoints(computerPoints + 1);
+    } 
+    // Call for gameover function.
+  };
+
+
+    return (
+      <>
+        <section className="container">
           <div className="result_area">
             <div className="result_images">
               <span className="playerResult">
-                <img src= {playerChoice} alt="Rock Hand" />
+                <img src={playerChoice} alt="Rock Hand" />
               </span>
               <span className="computerResult">
-                <img src= {computerChoice} alt="Rock Hand" />
+                <img src={computerChoice} alt="Rock Hand" />
               </span>
             </div>
             <div className="score">
               {playerName} {playerPoints} / {computerPoints} Computer
             </div>
-            <div className= "score">{result}</div>
+            <div className="score">{result}</div>
           </div>
           <div className="option_images">
             <span className="option_image">
@@ -62,8 +81,8 @@ function App() {
             </span>
           </div>
         </section>
-    </>
-  )
-}
+      </>
+    )
+  }
 
-export default App
+  export default App
