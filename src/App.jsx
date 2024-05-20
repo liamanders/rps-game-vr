@@ -17,6 +17,20 @@ function App() {
 
   const choices = [rock, paper, scissors]
 
+
+  useEffect(() => {
+    const askPlayerName = () => {
+      let newName = prompt("Enter your name to start the game: ");
+      while (!newName || !isNaN(newName)) {
+        newName = prompt("Error: Invalid input. Name cannot be empty or numeric.");
+      }
+      setPlayerName(newName);
+    };
+
+    askPlayerName();
+  },[]);
+
+
   const calculateResult = (playerChoice, computerChoice) => {
     if (playerChoice === computerChoice) {
       setPlayerResult("It's a tie!");
