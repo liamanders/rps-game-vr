@@ -12,6 +12,10 @@ align-items: center;
 justify-content: center;
 background: black;
 font-family: "Jersey 15", sans-serif;
+text-align: center;
+font-size: 2rem;
+color: blue;
+margin-top: .5rem;
 }
 
 ::selection {
@@ -60,7 +64,7 @@ transform: rotate(-90deg) rotateY(180deg);
 text-align: center;
 font-size: 2rem;
 color: var(--clr-primary-500);
-margin-top: 1.5rem;
+margin-top: .5rem;
 }
 
 .playerPoints {
