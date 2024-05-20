@@ -4,7 +4,6 @@ import paper from '/images/paper.png';
 import scissors from '/images/scissors.png';
 
 import './App.css'
-// riad
 function App() {
   const [playerChoice, setPlayerChoice] = useState(rock)
   const [computerChoice, setComputerChoice] = useState(rock)
@@ -16,6 +15,9 @@ function App() {
 
 
   const choices = [rock, paper, scissors]
+  const handlePlayerChoice = (choice) => {
+   
+  };
 
   return (
     <>
