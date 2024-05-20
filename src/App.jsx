@@ -16,7 +16,8 @@ function App() {
 
   const choices = [rock, paper, scissors]
   const handlePlayerChoice = (choice) => {
-   
+    setPlayerChoice(choice);
+    
   };
 
   return (
